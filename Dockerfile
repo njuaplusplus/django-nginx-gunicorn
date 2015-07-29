@@ -23,9 +23,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf && \
     chmod u+x /DjangoProject/bin/gunicorn_start  && \
     chmod u+x /DjangoProject/bin/run.sh && \
     ln -s /DjangoProject/supervisor-hello.conf /etc/supervisor/conf.d/ && \
-    ln -s /DjangoProject/nginx-hello.conf /etc/nginx/sites-enabled/ && \
-    cd /DjangoProject/duoshuo-python-sdk/ && python setup.py install && \
-    rm -rf /DjangoProject/duoshuo-python-sdk/
+    ln -s /DjangoProject/nginx-hello.conf /etc/nginx/sites-enabled/
 
 EXPOSE 80
 CMD ["/DjangoProject/bin/run.sh"]
